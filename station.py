@@ -20,11 +20,11 @@ def get_pref_cd(pref_name):
         raise ValueError(pref_name + " is not exist")
     return val[0]
 
-def get_station_from_pref(pref_name):
+def get_station_from_pref_name(pref_name):
     pref_cd = get_pref_cd(pref_name)
     return df_station[df_station["pref_cd"] == pref_cd]
 
-def get_lat_lng_from_station(station_name):
+def get_lat_lng_from_station_name(station_name):
     station = df_station[df_station["station_name"] == station_name]
     val = station[["lat","lon"]].values
     if len(val) == 0:
