@@ -16,8 +16,8 @@ class TestStation(unittest.TestCase):
             station.get_pref_cd("東京")
 
     def test_get_lat_lng(self):
-        np.testing.assert_array_almost_equal(np.array([41.773709, 140.726413]), station.get_lat_lng_from_station("函館"))
-        np.testing.assert_array_almost_equal(np.array([35.681391, 139.766103]), station.get_lat_lng_from_station("東京"))
+        np.testing.assert_array_almost_equal(np.array([41.773709, 140.726413]), station.get_lat_lng_from_station_name("函館"))
+        np.testing.assert_array_almost_equal(np.array([35.681391, 139.766103]), station.get_lat_lng_from_station_name("東京"))
 
         with self.assertRaises(ValueError, msg="hogehoge is not exist"):
-            station.get_lat_lng_from_station("hogehoge")
+            station.get_lat_lng_from_station_name("hogehoge")
