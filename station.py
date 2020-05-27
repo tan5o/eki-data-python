@@ -1,11 +1,13 @@
 import pandas as pd
-import numpy as np
+import os
 
-df_station = pd.read_csv("./csv/station20200316free.csv")
-df_company = pd.read_csv("./csv/company20200309.csv")
-df_join = pd.read_csv("./csv/join20200306.csv")
-df_line = pd.read_csv("./csv/line20200306free.csv")
-df_pref = pd.read_csv("./csv/pref.csv")
+current_dir = os.path.dirname(__file__)
+
+df_station = pd.read_csv(current_dir + "/csv/station20200316free.csv")
+df_company = pd.read_csv(current_dir + "/csv/company20200309.csv")
+df_join = pd.read_csv(current_dir + "/csv/join20200306.csv")
+df_line = pd.read_csv(current_dir + "/csv/line20200306free.csv")
+df_pref = pd.read_csv(current_dir + "/csv/pref.csv")
 
 def get_df():
     return {"station": df_station, "company": df_company, "join": df_join, "line": df_line, "pref": df_pref}
