@@ -22,6 +22,22 @@ def get_pref_cd(pref_name):
         raise ValueError(pref_name + " is not exist")
     return val[0]
 
+def get_station_name(station_cd):
+    if type(station_cd) is str:
+        station_cd = int(station_cd)
+    val = df_station[df_station["station_cd"] == station_cd]["station_name"].values
+
+    if len(val) == 0:
+        raise ValueError(station_cd + " is not exist")
+    return val[0]
+
+def get_station_cd(station_name):
+    val = df_station[df_station["station_name"] == station_name]["station_cd"].values
+
+    if len(val) == 0:
+        raise ValueError(station_name + " is not exist")
+    return val[0]
+
 def get_station_from_pref_name(pref_name):
     pref_cd = get_pref_cd(pref_name)
     return df_station[df_station["pref_cd"] == pref_cd]
