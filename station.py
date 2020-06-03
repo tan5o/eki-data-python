@@ -47,7 +47,7 @@ def get_lat_lng_from_station_name(station_name):
     val = station[["lat","lon"]].values
     if len(val) == 0:
         raise ValueError(station_name + " is not exist")
-    print(type(val[0].astype(float)))
+    #print(type(val[0].astype(float)))
     return val[0]
 
 #print(get_pref_cd("北海道"))
